@@ -1,0 +1,52 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">Search for things... with Solr!</a>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" ng-controller="SearchController">
+
+	<form ng-submit="search()" class="form-search">
+		<input type="text" class="input-medium search-query" ng-model="searchTerm" placeholder="Enter a search term" required />
+		<button class="btn" type="submit">Search</button>
+	</form>
+
+	<hr>
+
+	<div class="row-fluid">
+
+		<div class="span10">
+			<fieldset>
+				<legend>Solr Search Results:</legend>
+				<div class="media" ng-hide="isLoadingSolr" ng-repeat="result in solrResults">
+					<div class="media-body">
+						<h5 class="media-heading">{{result.name}}</h5>
+						<blockquote>{{result.productDescription}}</blockquote>
+						<ul>
+							<li>
+								<small class="muted">Product number: {{result.productNumber}}</small>
+							</li>
+							<li>
+								<small class="muted">Category: {{result.categoryName}} | Subcategory: {{result.subcategoryName}}</small>
+							</li>
+							<li>
+								<small class="muted">ListPrice: {{result.listPrice}} | Color: {{result.color}}</small>
+							</li>
+						</ul>
+					</div>
+					<hr />
+				</div>
+				<img src="~/Images/michaelmoonwalking.gif" ng-show="isLoadingSolr" />
+			</fieldset>
+		</div>
+
+	</div>
+
+</div>

@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolrSearchEngineDemo", "SolrSearchEngineDemo\SolrSearchEngineDemo.csproj", "{DD115CC7-7A19-4942-AAC9-0F93E3931A38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solr", "Solr\Solr.csproj", "{1827FFD7-EAB3-4C7C-9559-4174942836B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AC50589E-C7D8-4852-A123-D23EEA328024}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+		vSolrImport.sql = vSolrImport.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		QA Deploy Master|Any CPU = QA Deploy Master|Any CPU
+		QA Deploy Slave|Any CPU = QA Deploy Slave|Any CPU
+		QA Deploy|Any CPU = QA Deploy|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.QA Deploy Master|Any CPU.ActiveCfg = Release|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.QA Deploy Master|Any CPU.Build.0 = Release|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.QA Deploy Slave|Any CPU.ActiveCfg = Release|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.QA Deploy Slave|Any CPU.Build.0 = Release|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.QA Deploy|Any CPU.ActiveCfg = Release|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.QA Deploy|Any CPU.Build.0 = Release|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD115CC7-7A19-4942-AAC9-0F93E3931A38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.Development|Any CPU.Build.0 = Development|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.QA Deploy Master|Any CPU.ActiveCfg = QA Deploy Master|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.QA Deploy Master|Any CPU.Build.0 = QA Deploy Master|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.QA Deploy Slave|Any CPU.ActiveCfg = QA Deploy Slave|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.QA Deploy Slave|Any CPU.Build.0 = QA Deploy Slave|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.QA Deploy|Any CPU.ActiveCfg = QA Deploy|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.QA Deploy|Any CPU.Build.0 = QA Deploy|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1827FFD7-EAB3-4C7C-9559-4174942836B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

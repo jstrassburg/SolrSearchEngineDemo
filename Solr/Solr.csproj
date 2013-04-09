@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1827FFD7-EAB3-4C7C-9559-4174942836B0}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Solr</RootNamespace>
+    <AssemblyName>Solr</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="solr-4.1.0\contrib\analysis-extras\lib\icu4j-49.1.jar" />
+    <Content Include="solr-4.1.0\contrib\analysis-extras\lib\morfologik-fsa-1.5.5.jar" />
+    <Content Include="solr-4.1.0\contrib\analysis-extras\lib\morfologik-polish-1.5.5.jar" />
+    <Content Include="solr-4.1.0\contrib\analysis-extras\lib\morfologik-stemming-1.5.5.jar" />
+    <Content Include="solr-4.1.0\contrib\analysis-extras\lucene-libs\lucene-analyzers-icu-4.1.0.jar" />
+    <Content Include="solr-4.1.0\contrib\analysis-extras\lucene-libs\lucene-analyzers-morfologik-4.1.0.jar" />
+    <Content Include="solr-4.1.0\contrib\analysis-extras\lucene-libs\lucene-analyzers-smartcn-4.1.0.jar" />
+    <Content Include="solr-4.1.0\contrib\analysis-extras\lucene-libs\lucene-analyzers-stempel-4.1.0.jar" />
+    <Content Include="solr-4.1.0\contrib\analysis-extras\README.txt" />
+    <Content Include="solr-4.1.0\contrib\clustering\lib\attributes-binder-1.0.1.jar" />
+    <Content Include="solr-4.1.0\contrib\clustering\lib\carrot2-core-3.6.2.jar" />
+    <Content Include="solr-4.1.0\contrib\clustering\lib\hppc-0.4.1.jar" />
+    <Content Include="solr-4.1.0\contrib\clustering\lib\jackson-core-asl-1.7.4.jar" />
+    <Content Include="solr-4.1.0\contrib\clustering\lib\jackson-mapper-asl-1.7.4.jar" />
+    <Content Include="solr-4.1.0\contrib\clustering\lib\mahout-collections-1.0.jar" />
+    <Content Include="solr-4.1.0\contrib\clustering\lib\mahout-math-0.6.jar" />
+    <Content Include="solr-4.1.0\contrib\clustering\lib\simple-xml-2.6.4.jar" />
+    <Content Include="solr-4.1.0\contrib\clustering\README.txt" />
+    <Content Include="solr-4.1.0\contrib\dataimporthandler\lib\activation-1.1.jar" />
+    <Content Include="solr-4.1.0\contrib\dataimporthandler\lib\mail-1.4.1.jar" />
+    <Content Include="solr-4.1.0\contrib\dataimporthandler\README.txt" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\apache-mime4j-core-0.7.2.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\apache-mime4j-dom-0.7.2.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\bcmail-jdk15-1.45.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\bcprov-jdk15-1.45.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\boilerpipe-1.1.0.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\commons-compress-1.4.1.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\dom4j-1.6.1.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\fontbox-1.7.0.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\icu4j-49.1.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\isoparser-1.0-RC-1.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\jdom-1.0.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\jempbox-1.7.0.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\juniversalchardet-1.0.3.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\metadata-extractor-2.4.0-beta-1.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\netcdf-4.2-min.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\pdfbox-1.7.0.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\poi-3.8.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\poi-ooxml-3.8.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\poi-ooxml-schemas-3.8.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\poi-scratchpad-3.8.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\rome-0.9.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\tagsoup-1.2.1.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\tika-core-1.2.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\tika-parsers-1.2.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\vorbis-java-core-0.1.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\vorbis-java-tika-0.1.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\xercesImpl-2.9.1.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\xmlbeans-2.3.0.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\lib\xz-1.0.jar" />
+    <Content Include="solr-4.1.0\contrib\extraction\README.txt" />
+    <Content Include="solr-4.1.0\contrib\langid\lib\jsonic-1.2.7.jar" />
+    <Content Include="solr-4.1.0\contrib\langid\lib\langdetect-1.1-20120112.jar" />
+    <Content Include="solr-4.1.0\contrib\langid\README.txt" />
+    <Content Include="solr-4.1.0\contrib\uima\lib\AlchemyAPIAnnotator-2.3.1.jar" />
+    <Content Include="solr-4.1.0\contrib\uima\lib\commons-digester-2.0.jar" />
+    <Content Include="solr-4.1.0\contrib\uima\lib\OpenCalaisAnnotator-2.3.1.jar" />
+    <Content Include="solr-4.1.0\contrib\uima\lib\Tagger-2.3.1.jar" />
+    <Content Include="solr-4.1.0\contrib\uima\lib\uimaj-core-2.3.1.jar" />
+    <Content Include="solr-4.1.0\contrib\uima\lib\WhitespaceTokenizer-2.3.1.jar" />
+    <Content Include="solr-4.1.0\contrib\uima\lucene-libs\lucene-analyzers-uima-4.1.0.jar" />
+    <Content Include="solr-4.1.0\contrib\uima\README.txt" />
+    <Content Include="solr-4.1.0\contrib\velocity\lib\commons-beanutils-1.7.0.jar" />
+    <Content Include="solr-4.1.0\contrib\velocity\lib\commons-collections-3.2.1.jar" />
+    <Content Include="solr-4.1.0\contrib\velocity\lib\velocity-1.7.jar" />
+    <Content Include="solr-4.1.0\contrib\velocity\lib\velocity-tools-2.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-analysis-extras-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-cell-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-clustering-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-core-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-dataimporthandler-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-dataimporthandler-extras-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-langid-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-solrj-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-test-framework-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-uima-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solr-velocity-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\solrj-lib\commons-io-2.1.jar" />
+    <Content Include="solr-4.1.0\dist\solrj-lib\httpclient-4.1.3.jar" />
+    <Content Include="solr-4.1.0\dist\solrj-lib\httpcore-4.1.4.jar" />
+    <Content Include="solr-4.1.0\dist\solrj-lib\httpmime-4.1.3.jar" />
+    <Content Include="solr-4.1.0\dist\solrj-lib\jcl-over-slf4j-1.6.4.jar" />
+    <Content Include="solr-4.1.0\dist\solrj-lib\slf4j-api-1.6.4.jar" />
+    <Content Include="solr-4.1.0\dist\solrj-lib\slf4j-jdk14-1.6.4.jar" />
+    <Content Include="solr-4.1.0\dist\solrj-lib\wstx-asl-3.2.7.jar" />
+    <Content Include="solr-4.1.0\dist\solrj-lib\zookeeper-3.4.5.jar" />
+    <Content Include="solr-4.1.0\dist\test-framework\lib\ant-1.8.2.jar" />
+    <Content Include="solr-4.1.0\dist\test-framework\lib\junit-4.10.jar" />
+    <Content Include="solr-4.1.0\dist\test-framework\lib\junit4-ant-2.0.8.jar" />
+    <Content Include="solr-4.1.0\dist\test-framework\lib\randomizedtesting-runner-2.0.8.jar" />
+    <Content Include="solr-4.1.0\dist\test-framework\lucene-libs\lucene-test-framework-4.1.0.jar" />
+    <Content Include="solr-4.1.0\dist\test-framework\README.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\contexts\solr.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\etc\jetty.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\etc\webdefault.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\ext\jtds-1.2.6.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-continuation-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-deploy-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-http-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-io-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-jmx-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-security-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-server-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-servlet-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-util-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-webapp-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\jetty-xml-8.1.8.v20121106.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\lib\servlet-api-3.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\multicore\core0\conf\schema.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\multicore\core0\conf\solrconfig.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\multicore\core1\conf\schema.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\multicore\core1\conf\solrconfig.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\multicore\exampledocs\ipod_other.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\multicore\exampledocs\ipod_video.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\multicore\README.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\multicore\solr.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\README.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\admin.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\chosen.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\analysis.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\cloud.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\common.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\cores.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\dashboard.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\dataimport.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\index.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\java-properties.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\logging.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\menu.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\plugins.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\query.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\replication.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\schema-browser.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\css\styles\threads.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\favicon.ico" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\chosen-sprite.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\div.gif" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\favicon.ico" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\7z.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\ai.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\aiff.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\asc.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\audio.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\bin.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\bz2.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\c.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\cfc.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\cfm.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\chm.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\class.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\conf.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\cpp.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\cs.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\css.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\csv.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\deb.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\divx.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\doc.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\dot.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\eml.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\enc.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\file.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\gif.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\gz.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\hlp.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\htm.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\html.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\image.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\iso.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\jar.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\java.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\jpeg.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\jpg.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\js.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\lua.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\m.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\mm.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\mov.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\mp3.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\mpg.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\odc.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\odf.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\odg.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\odi.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\odp.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\ods.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\odt.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\ogg.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\pdf.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\pgp.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\php.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\pl.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\png.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\ppt.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\ps.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\py.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\ram.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\rar.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\rb.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\rm.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\rpm.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\rtf.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\sig.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\sql.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\swf.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\sxc.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\sxd.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\sxi.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\sxw.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\tar.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\tex.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\tgz.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\txt.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\vcf.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\video.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\vsd.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\wav.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\wma.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\wmv.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\xls.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\xml.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\xpi.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\xvid.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\zip.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\arrow-000-small.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\arrow-circle.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\arrow-switch.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\asterisk.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\battery.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\block-small.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\block.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\book-open-text.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\box.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\bug.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\chart.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\chevron-small-expand.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\chevron-small.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\clipboard-list.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\clipboard-paste-document-text.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\clipboard-paste.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\clock-select-remain.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\clock-select.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\construction.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\cross-0.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\cross-1.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\cross-button.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\cross.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\dashboard.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\database.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\databases.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\disk-black.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\document-convert.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\document-import.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\document-list.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\document-text.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\download-cloud.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\exclamation-button.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\eye.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\folder-export.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\folder-tree.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\folder.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\funnel-small.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\funnel.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\gear.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\globe-network.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\globe.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\hammer-screwdriver.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\hammer.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\hand.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\highlighter-text.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\hourglass--exclamation.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\hourglass.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\inbox-document-text.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\information-button.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\information-small.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\information-white.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\information.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\jar.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\magnifier.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\mail.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\memory.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\molecule.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\network-cloud.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\network-status-away.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\network-status-busy.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\network-status-offline.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\network-status.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\network.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\node-design.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\node-master.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\node-select.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\node-slave.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\node.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\pencil-small.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\plus-button.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\processor.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\prohibition.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\property.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\question-small-white.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\question-white.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\question.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\receipt-invoice.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\receipt.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\script-code.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\server-cast.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\server.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\sitemap.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\slash.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\status-away.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\status-busy.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\status-offline.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\status.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\system-monitor--exclamation.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\system-monitor.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\table.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\terminal.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\tick-circle.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\tick-red.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\tick.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\toggle-small-expand.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\toggle-small.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\toolbox.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\ui-accordion.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\ui-address-bar.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\ui-check-box-uncheck.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\ui-check-box.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\ui-radio-button-uncheck.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\ui-radio-button.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\ui-text-field-select.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\users.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\wooden-box.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ico\zone.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\loader-light.gif" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\loader.gif" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\lucene-ico.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\solr-ico.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\solr.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\tree.png" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\ZeroClipboard.swf" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\chosen.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\console.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\d3.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\highlight.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\jquery-1.7.2.min.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\jquery.autogrow.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\jquery.blockUI.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\jquery.cookie.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\jquery.form.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\jquery.jstree.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\jquery.sammy.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\jquery.sparkline.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\jquery.timeago.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\linker.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\order.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\lib\ZeroClipboard.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\main.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\require.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\analysis.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\app.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\cloud.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\cores.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\dashboard.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\dataimport.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\file.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\index.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\java-properties.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\logging.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\ping.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\plugins.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\query.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\replication.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\schema-browser.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\js\scripts\threads.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\META-INF\LICENSE.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\META-INF\NOTICE.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\analysis.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\cloud.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\cores.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\dashboard.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\dataimport.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\index.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\logging.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\plugins.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\query.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\replication.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\schema-browser.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\tpl\threads.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\cglib-nodep-2.2.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\commons-cli-1.2.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\commons-codec-1.7.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\commons-fileupload-1.2.1.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\commons-io-2.1.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\commons-lang-2.6.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\guava-13.0.1.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\httpclient-4.1.3.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\httpcore-4.1.4.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\httpmime-4.1.3.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\jcl-over-slf4j-1.6.4.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-analyzers-common-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-analyzers-kuromoji-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-analyzers-phonetic-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-core-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-grouping-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-highlighter-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-memory-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-misc-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-queries-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-queryparser-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-spatial-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\lucene-suggest-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\objenesis-1.2.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\slf4j-api-1.6.4.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\slf4j-jdk14-1.6.4.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\solr-core-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\solr-solrj-4.1.0.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\spatial4j-0.3.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\wstx-asl-3.2.7.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\lib\zookeeper-3.4.5.jar" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\web.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\WEB-INF\weblogic.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\admin-extra.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\admin-extra.menu-bottom.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\admin-extra.menu-top.html" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\currency.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\etc\logging.properties" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\data-config.xml">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\elevate.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\contractions_ca.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\contractions_fr.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\contractions_ga.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\contractions_it.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\hyphenations_ga.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stemdict_nl.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stoptags_ja.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_ar.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_bg.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_ca.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_cz.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_da.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_de.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_el.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_en.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_es.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_eu.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_fa.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_fi.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_fr.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_ga.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_gl.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_hi.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_hu.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_hy.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_id.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_it.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_ja.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_lv.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_nl.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_no.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_pt.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_ro.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_ru.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_sv.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_th.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\stopwords_tr.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\userdict_ja.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\mapping-FoldToASCII.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\mapping-ISOLatin1Accent.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\protwords.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\schema.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\solrconfig.xml">
+      <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\spellings.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\stopwords.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\synonyms.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\update-script.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\jquery.autocomplete.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\jquery.autocomplete.js" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\main.css" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\xslt\example.xsl" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\xslt\example_atom.xsl" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\xslt\example_rss.xsl" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\xslt\luke.xsl" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\xslt\updateXml.xsl" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\README.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\README.txt" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\solr.xml" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\start.jar" />
+    <Content Include="solr-4.1.0\dist\solr-4.1.0.war" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\cloud-scripts\zkcli.bat" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\cloud-scripts\zkcli.sh" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\multicore\zoo.cfg" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\img\filetypes\README" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr-webapp\webapp\META-INF\MANIFEST.MF" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\scripts.conf" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\browse.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\cluster.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\clusterResults.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\debug.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\facets.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\facet_fields.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\facet_pivot.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\facet_queries.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\facet_ranges.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\footer.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\head.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\header.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\hit.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\hitGrouped.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\join-doc.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\layout.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\product-doc.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\query.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\queryGroup.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\querySpatial.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\richtext-doc.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\suggest.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\tabs.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\velocity\VM_global_library.vm" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\solr\zoo.cfg" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\webapps\solr.war" />
+    <Content Include="solr-4.1.0\adventureWorksInstance\etc\realm.properties" />
+    <None Include="start_solr.cmd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="solr-4.1.0\adventureWorksInstance\logs\" />
+    <Folder Include="solr-4.1.0\adventureWorksInstance\solr\bin\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA Deploy|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA Deploy Master|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA Deploy Slave|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SlowCheetahTargets Condition=" '$(SlowCheetahTargets)'=='' ">$(LOCALAPPDATA)\Microsoft\MSBuild\SlowCheetah\v1\SlowCheetah.Transforms.targets</SlowCheetahTargets>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60444</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SlowCheetahTargets)" Condition="Exists('$(SlowCheetahTargets)')" />
+</Project>
