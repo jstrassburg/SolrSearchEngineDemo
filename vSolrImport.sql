@@ -1,4 +1,4 @@
-﻿USE [AdventureWorks2008]
+﻿USE [AdventureWorks2012]
 GO
 
 /****** Object:  View [Production].[vSolrImport]    Script Date: 04/09/2013 11:40:14 ******/

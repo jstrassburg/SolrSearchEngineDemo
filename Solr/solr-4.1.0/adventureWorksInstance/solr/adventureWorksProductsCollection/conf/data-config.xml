@@ -1,5 +1,5 @@
 ﻿<dataConfig>
-	<dataSource driver="net.sourceforge.jtds.jdbc.Driver" url="jdbc:jtds:sqlserver://localhost;databaseName=AdventureWorks2008;useLOBs=false;"
+	<dataSource driver="net.sourceforge.jtds.jdbc.Driver" url="jdbc:jtds:sqlserver://localhost;databaseName=AdventureWorks2012;useLOBs=false;"
 				user="adventure" password="works"/>
 	<document>
 		<entity name="item" query="select * from Production.vSolrImport" transformer="RegexTransformer">
