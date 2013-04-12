@@ -22,17 +22,20 @@
 
 	<div class="row-fluid" ng-show="solrResult">
 
+		<!-- Category filter and facet information -->
 		<div class="span2">
 			<fieldset>
 				<legend>Categories:</legend>
 				<div class="media" ng-hide="isLoadingSolr" ng-repeat="category in solrResult.categories">
 					<div class="media-body">
-						<h5 class="media-heading">{{category.key}} : {{category.value}}</h5>
+						<h5 class="media-heading">
+							<a href="#" ng-click="filter(category.key)">{{category.key}}</a> : {{category.value}}</h5>
 					</div>
 				</div>
 			</fieldset>
 		</div>
 
+		<!-- Item results -->
 		<div class="span10">
 			<fieldset>
 				<legend>Solr search found {{solrResult.numFound}} results:</legend>

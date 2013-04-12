@@ -16,5 +16,11 @@
 				});
 			}
 		);
+		$scope.categoryFilter = '';
 	};
+
+	$scope.filter = function (category) {
+		$scope.categoryFilter = category;
+		$scope.search();
+	}
 }
