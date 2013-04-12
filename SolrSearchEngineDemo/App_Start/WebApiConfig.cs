@@ -12,8 +12,8 @@ namespace SolrSearchEngineDemo
 		{
 			config.Routes.MapHttpRoute(
 				name: "DefaultApi",
-				routeTemplate: "api/{controller}/{term}",
-				defaults: new { id = RouteParameter.Optional }
+				routeTemplate: "api/{controller}/{categoryFilter}",
+				defaults: new { categoryFilter = RouteParameter.Optional }
 			);
 
 			// Uncomment the following line of code to enable query support for actions with an IQueryable or IQueryable<T> return type.

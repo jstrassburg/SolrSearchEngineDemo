@@ -478,6 +478,7 @@
     <Content Include="solr-4.1.0\adventureWorksInstance\etc\logging.properties" />
     <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\data-config.xml">
       <TransformOnBuild>true</TransformOnBuild>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\elevate.xml" />
     <Content Include="solr-4.1.0\adventureWorksInstance\solr\adventureWorksProductsCollection\conf\lang\contractions_ca.txt" />
