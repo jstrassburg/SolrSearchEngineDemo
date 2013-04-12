@@ -22,7 +22,7 @@ namespace SolrSearchEngineDemo
 
 			var solrServerUrl = ConfigurationManager.AppSettings["SolrServerUrl"];
 			var solrConnection = new SolrConnection(solrServerUrl);
-			Startup.Init<SearchResult>(solrConnection);
+			Startup.Init<SearchResultItem>(solrConnection);
 		}
 	}
 }

@@ -11,17 +11,17 @@ namespace SolrSearchEngineDemo.Controllers
 {
 	public class SolrSearchController : ApiController
 	{
-		private readonly ISolrOperations<SearchResult> _solrOperations =
-			ServiceLocator.Current.GetInstance<ISolrOperations<SearchResult>>();
+		private readonly ISolrOperations<SearchResultItem> _solrOperations =
+			ServiceLocator.Current.GetInstance<ISolrOperations<SearchResultItem>>();
 
 		// GET api/solrsearch/?q=turkey
-		public IEnumerable<SearchResult> Get(string q)
+		public SearchResult Get(string q)
 		{
 			return Get(q, null);
 		}
 
 		// GET api/solrsearch/category/?q=turkey
-		public IEnumerable<SearchResult> Get(string q, string categoryFilter)
+		public SearchResult Get(string q, string categoryFilter)
 		{
 			var query = new SolrQuery(Sanitize(q));
 
@@ -31,7 +31,7 @@ namespace SolrSearchEngineDemo.Controllers
 				filterQueries.Add(new SolrQueryByField("CategoryName", categoryFilter));
 			}
 
-			return _solrOperations.Query(
+			var solrResult = _solrOperations.Query(
 				query,
 				new QueryOptions
 				{
@@ -51,6 +51,12 @@ namespace SolrSearchEngineDemo.Controllers
 						{ "pf", ConfigurationManager.AppSettings["SolrPhraseFields"]}
 					}
 				});
+
+			return new SearchResult
+			{
+				Items = solrResult,
+				NumFound = solrResult.NumFound
+			};
 		}
 
 		private static readonly Regex SolrSanitizationPattern = new Regex(

@@ -1,6 +1,6 @@
 ﻿function SearchController($scope) {
 	$scope.isLoadingSolr = false;
-	$scope.solrResults = [];
+	$scope.solrResult = null;
 	$scope.categoryFilter = '';
 
 	$scope.search = function () {
@@ -12,7 +12,7 @@
 			function (data) {
 				$scope.$apply(function () {
 					$scope.isLoadingSolr = false;
-					$scope.solrResults = data;
+					$scope.solrResult = data;
 				});
 			}
 		);
