@@ -1,11 +1,12 @@
 ﻿using Microsoft.Practices.ServiceLocation;
 using SolrNet;
 using SolrNet.Commands.Parameters;
+using SolrSearchEngineDemo.Models;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web.Http;
-using SolrSearchEngineDemo.Models;
 
 namespace SolrSearchEngineDemo.Controllers
 {
@@ -36,7 +37,7 @@ namespace SolrSearchEngineDemo.Controllers
 				new QueryOptions
 				{
 					Start = 0,
-					Rows = 25,
+					Rows = 5,
 					FilterQueries = filterQueries,
 					Facet = new FacetParameters
 					{
@@ -55,7 +56,9 @@ namespace SolrSearchEngineDemo.Controllers
 			return new SearchResult
 			{
 				Items = solrResult,
-				NumFound = solrResult.NumFound
+				NumFound = solrResult.NumFound,
+				Categories = solrResult.FacetFields["CategoryName"].Select(
+					x => new KeyValuePair<string, int>(x.Key, x.Value))
 			};
 		}
 
