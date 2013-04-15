@@ -15,20 +15,14 @@ namespace SolrSearchEngineDemo.Controllers
 		private readonly ISolrOperations<SearchResultItem> _solrOperations =
 			ServiceLocator.Current.GetInstance<ISolrOperations<SearchResultItem>>();
 
-		// GET api/solrsearch/?q=turkey
-		public SearchResult Get(string q)
-		{
-			return Get(q, null);
-		}
-
-		// GET api/solrsearch/category/?q=turkey
-		public SearchResult Get(string q, string categoryFilter)
+		// GET api/solrsearch/category/?q=turkey&lowPrice=50&highPrice=*
+		public SearchResult Get(string q, string lowPrice = null, string highPrice = null, string categoryFilter = null)
 		{
 			if (q == "michael")
 				throw new ArgumentException("billie jean is not my lover", "q");
 
 			var query = new SolrQuery(SolrQuerySanitizer.Sanitize(q));
-			var queryOptions = CreateQueryOptions(categoryFilter);
+			var queryOptions = CreateQueryOptions(categoryFilter, lowPrice, highPrice);
 
 			var solrResult = _solrOperations.Query(query, queryOptions);
 
@@ -50,13 +44,13 @@ namespace SolrSearchEngineDemo.Controllers
 				};
 		}
 
-		private static QueryOptions CreateQueryOptions(string categoryFilter)
+		private static QueryOptions CreateQueryOptions(string categoryFilter, string lowPrice, string highPrice)
 		{
 			return new QueryOptions
 				{
 					Start = 0,
 					Rows = 5,
-					FilterQueries = CreateFilterQueries(categoryFilter),
+					FilterQueries = CreateFilterQueries(categoryFilter, lowPrice, highPrice),
 					Facet = CreateFacetParameters(),
 					ExtraParams = CreateExtraParams()
 				};
@@ -91,12 +85,16 @@ namespace SolrSearchEngineDemo.Controllers
 			};
 		}
 
-		private static ICollection<ISolrQuery> CreateFilterQueries(string categoryFilter)
+		private static ICollection<ISolrQuery> CreateFilterQueries(string categoryFilter, string lowPrice, string highPrice)
 		{
 			var filterQueries = new List<ISolrQuery>();
 			if (!string.IsNullOrEmpty(categoryFilter))
 			{
 				filterQueries.Add(new SolrQueryByField("CategoryName", categoryFilter));
+			}
+			if (!string.IsNullOrEmpty(lowPrice) && !string.IsNullOrEmpty(highPrice))
+			{
+				filterQueries.Add(new SolrQueryByRange<string>("ListPrice", lowPrice, highPrice));
 			}
 			return filterQueries;
 		}

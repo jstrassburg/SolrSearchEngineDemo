@@ -29,7 +29,7 @@
 				<div class="media" ng-repeat="category in solrResult.categories">
 					<div class="media-body">
 						<h5 class="media-heading">
-							<a href="#" ng-click="filter(category.key)">{{category.key}}</a> : {{category.value}}</h5>
+							<a href="#" ng-click="filterCategory(category.key)">{{category.key}}</a> : {{category.value}}</h5>
 					</div>
 				</div>
 
@@ -39,25 +39,41 @@
 							<legend>Price range:</legend>
 							<div class="media" ng-show="solrResult.lessThanFifty > 0">
 								<div class="media-body">
-									<h5 class="media-heading">$0.00 - $50.00: {{solrResult.lessThanFifty}}</h5>
+									<h5 class="media-heading">
+										<a href="#" ng-click="filterPriceRange('0', '50')">
+											$0.00 - $50.00
+										</a> : {{solrResult.lessThanFifty}}
+									</h5>
 								</div>
 							</div>
 
 							<div class="media" ng-show="solrResult.fiftyToOneHundred > 0">
 								<div class="media-body">
-									<h5 class="media-heading">$50.00 - $100.00: {{solrResult.fiftyToOneHundred}}</h5>
+									<h5 class="media-heading">
+										<a href="#" ng-click="filterPriceRange('50', '100')">
+											$50.00 - $100.00
+										</a> : {{solrResult.fiftyToOneHundred}}
+									</h5>
 								</div>
 							</div>
 							
 							<div class="media" ng-show="solrResult.oneHundredToFiveHundred > 0">
 								<div class="media-body">
-									<h5 class="media-heading">$100.00 - $500.00: {{solrResult.oneHundredToFiveHundred}}</h5>
+									<h5 class="media-heading">
+										<a href="#" ng-click="filterPriceRange('100', '500')">
+											$100.00 - $500.00
+										</a> : {{solrResult.oneHundredToFiveHundred}}
+									</h5>
 								</div>
 							</div>
 							
 							<div class="media" ng-show="solrResult.overFiveHundred > 0">
 								<div class="media-body">
-									<h5 class="media-heading">over $500.00: {{solrResult.overFiveHundred}}</h5>
+									<h5 class="media-heading">
+										<a href="#" ng-click="filterPriceRange('500', '*')">
+											over $500.00
+										</a> : {{solrResult.overFiveHundred}}
+									</h5>
 								</div>
 							</div>
 						</fieldset>
