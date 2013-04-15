@@ -4,6 +4,7 @@
 index/
 log/
 tlog/
+*dataimport.properties
 
 #################
 ## Visual Studio

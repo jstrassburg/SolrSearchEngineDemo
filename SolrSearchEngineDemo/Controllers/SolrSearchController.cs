@@ -2,6 +2,7 @@
 using SolrNet;
 using SolrNet.Commands.Parameters;
 using SolrSearchEngineDemo.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -23,6 +24,9 @@ namespace SolrSearchEngineDemo.Controllers
 		// GET api/solrsearch/category/?q=turkey
 		public SearchResult Get(string q, string categoryFilter)
 		{
+			if (q == "michael")
+				throw new ArgumentException("billie jean is not my lover", "q");
+
 			var query = new SolrQuery(SolrQuerySanitizer.Sanitize(q));
 			var queryOptions = CreateQueryOptions(categoryFilter);
 
