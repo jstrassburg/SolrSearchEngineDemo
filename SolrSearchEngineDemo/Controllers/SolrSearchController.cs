@@ -42,7 +42,11 @@ namespace SolrSearchEngineDemo.Controllers
 					Items = solrResult,
 					NumFound = solrResult.NumFound,
 					Categories = solrResult.FacetFields["CategoryName"].Select(
-						x => new KeyValuePair<string, int>(x.Key, x.Value))
+						x => new KeyValuePair<string, int>(x.Key, x.Value)),
+					LessThanFifty = solrResult.FacetQueries["ListPrice:[0 TO 50]"],
+					FiftyToOneHundred = solrResult.FacetQueries["ListPrice:[50 TO 100]"],
+					OneHundredToFiveHundred = solrResult.FacetQueries["ListPrice:[100 TO 500]"],
+					OverFiveHundred = solrResult.FacetQueries["ListPrice:[500 TO *]"]
 				};
 		}
 
@@ -69,11 +73,20 @@ namespace SolrSearchEngineDemo.Controllers
 
 		private static FacetParameters CreateFacetParameters()
 		{
+			var lessThanFifty = new SolrQueryByRange<decimal>("ListPrice", 0m, 50m);
+			var fiftyTo100 = new SolrQueryByRange<decimal>("ListPrice", 50m, 100m);
+			var oneHundredToFiveHundred = new SolrQueryByRange<decimal>("ListPrice", 100m, 500m);
+			var overFiveHundred = new SolrQueryByRange<string>("ListPrice", "500", "*");
+
 			return new FacetParameters
 			{
 				Queries = new List<ISolrFacetQuery>
 				{
-					new SolrFacetFieldQuery("CategoryName") { MinCount = 1 }
+					new SolrFacetFieldQuery("CategoryName") { MinCount = 1 },
+					new SolrFacetQuery(lessThanFifty),
+					new SolrFacetQuery(fiftyTo100),
+					new SolrFacetQuery(oneHundredToFiveHundred),
+					new SolrFacetQuery(overFiveHundred)
 				}
 			};
 		}
